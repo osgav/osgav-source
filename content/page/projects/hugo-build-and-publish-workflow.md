@@ -2,6 +2,7 @@
 author = "osgav"
 date = "2016-06-11T20:10:08Z"
 draft = false
+image = "images/hugo-logo2.png"
 share = true
 slug = "hugo-build-and-publish-workflow"
 title = "Hugo Build and Publish Workflow"
