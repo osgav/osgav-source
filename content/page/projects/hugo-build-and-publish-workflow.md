@@ -8,7 +8,9 @@ title = "Hugo Build and Publish Workflow"
 
 +++
 
-[< back to projects](/page/projects)
+[< back to projects](/page/projects)<br />
+**`created: 11/06/2016`**<br />
+**`updated: 12/06/2016`**
 
 ---
 
@@ -105,37 +107,74 @@ echo "osgav.run" > public/CNAME
 
 <s>I haven't scripted the publishing steps yet - need to rename some things for better structuring - *like cleanly deploying another hugo site in another repo's `gh-pages` branch or simply not messing up this site...*</s>
 
-So my ***build workflow*** has advanced a little since the beginning of this tale, some renaming has taken place to say the least as I hinted at above. With LiveReload working (just a hitch with how I was editing my files) and another couple of scripts (one that swallows up `./hugo/build-public`) the ***build and publish workflow*** looks something like this:
+So my ***build workflow*** has advanced a little since the beginning of this tale and some renaming has taken place as I hinted at above. With LiveReload now working (just a hitch with how I was editing my files) and another couple of scripts (one that swallows up `build-public`) the ***build and publish workflow*** looks something like this:
 
 - Creating new content or editing drafts -->
 
 ```
 $ cd osgav-source
 $ ./hugo/01-serve-withdrafts
+```
+```
 <open another terminal>
 $ vagrant ssh
 $ cd /vagrant/workbench/osgav-source
+$ hugo -t casper new post/next-new-post.md
 $ vi content/post/next-new-post.md
 <update content and save>
 ```
 With the `vi` terminal on one side of the screen and a web browser on the other, I can see the changes immediately after `:w` in `vi`. Really awesome!
+
+And to publish that new content live, we follow the same workflow as below... if I run `02-serve` I will no longer see my [cheatsheet](/page/projects/hugo-markdown-cheatsheet), but if I notice the latest post isn't there I can use the `hugo undraft` command and it'll appear immediately.
 
 
 - Simple update to live page like updating an image or a typo -->
 
 ```
 <edit image accordingly and save it>
+```
+```
 <if image filename has changed, update posts/pages referencing filename>
 <update posts/pages with typo>
-
+```
+```
 $ ./hugo/02-serve # to preview locally if necessary (unlikey for typo)
 $ ./hugo/03-publish-stage
 $ ./hugo/04-publish-prod "update typo in recent post"
-
-done!
 ```
 
-So where did `./hugo/build-public` go? It's purpose, described above, is in fact the first step towards publishing. You can test all of the site completely locally with `hugo server` without having built the `public` directory. As such it made sense to include its commands in a more complete script: `./hugo/03-publish-stage`
+So where did the `build-public` script go? It's purpose, described above, is in fact the first step towards publishing. You can test all of the site completely locally with `hugo server` without having to build the `public` directory. As such it made sense to include its commands in a more complete script: `03-publish-stage`
+
+```
+#!/bin/bash
+
+# delete old 'public' build
+rm -rf public/
+
+echo -e "\n--------------------------------------------------\n"
+echo -e "building hugo site --> public\n"
+
+hugo --theme=casper
+
+echo -e "\n--------------------------------------------------\n"
+echo "adding CNAME for osgav.run"
+touch public/CNAME
+echo "osgav.run" > public/CNAME
+
+echo -e "copying hugo site public --> osgav-root-public\n"
+rm -rf ../osgav-root-public/*
+cp -r public/* ../osgav-root-public/
+
+
+echo -e "\n--------------------------------------------------\n"
+echo -e "$ git status osgav-root-public\n"
+
+cd ../osgav-root-public
+git status
+
+echo -e "\n--------------------------------------------------\n"
+```
+
 
  
 

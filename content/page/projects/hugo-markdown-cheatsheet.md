@@ -9,22 +9,23 @@ title = "Hugo Markdown Cheatsheet"
 
 +++
 
-[< back to projects](/page/projects)
+[< back to projects](/page/projects)<br />
+**`created: 11/06/2016`**
 
 ---
 
-**TL;DR** there is a cheatsheet for Hugo Markdown available in my github (actually not yet, but will be soon), transcribed from https://sourceforge.net/p/hugo-generator/wiki/markdown_syntax/ (not all of it - and a couple of bits from gohugo docs)
+**TL;DR** there is a cheatsheet for Hugo Markdown available [in my github](https://raw.githubusercontent.com/osgav/osgav-source/master/content/post/cheatsheet.md), transcribed from [a guide here](https://sourceforge.net/p/hugo-generator/wiki/markdown_syntax/) (not all of it mind) and a couple of bits from [gohugo docs](https://gohugo.io/overview/introduction/).
 
-You can make this particularly handy by doing something like this:
+You can make this particularly handy by keeping a `cheatsheet.md` post like this:
 
 ```
 $ tree osgav/content
 osgav/content
 ├── page
-│   ├── hugo-markdown-cheatsheet.md
+│   ├── hugo-markdown-cheatsheet.md 
 │   └── projects.md
 └── post
-    ├── cheatsheet.md
+    ├── cheatsheet.md 
     ├── whois-osgav.md
     └── zerodots.md
 ```
