@@ -18,5 +18,5 @@ Project pages for content outside of or accompanying blog posts
 ##### this blog
 
 [Hugo Platform Runbook](/page/projects/hugo-platform-runbook)<br />
-[Hugo Build and Publish Workflow](/page/projects/hugo-build-and-publish-workflow) (in progress)<br />
+[Hugo Build and Publish Workflow](/page/projects/hugo-build-and-publish-workflow)<br />
 [Hugo Markdown Cheatsheet](/page/projects/hugo-markdown-cheatsheet)
