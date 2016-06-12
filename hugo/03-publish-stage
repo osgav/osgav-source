@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# delete old 'public' build
+rm -rf public/
+
+echo -e "\n--------------------------------------------------\n"
+echo -e "building hugo site --> public\n"
+
+hugo --theme=casper
+
+echo -e "\n--------------------------------------------------\n"
+echo "adding CNAME for osgav.run"
+touch public/CNAME
+echo "osgav.run" > public/CNAME
+
+echo -e "copying hugo site public --> osgav-root-public\n"
+rm -rf ../osgav-root-public/*
+cp -r public/* ../osgav-root-public/
+
+
+echo -e "\n--------------------------------------------------\n"
+echo -e "$ git status osgav-root-public\n"
+
+cd ../osgav-root-public
+git status
+
+echo -e "\n--------------------------------------------------\n"

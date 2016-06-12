@@ -1,8 +1,0 @@
-#!/bin/bash
-
-hugo --theme=casper
-
-# add CNAME file to public
-
-touch public/CNAME
-echo "osgav.run" > public/CNAME

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+function pause(){
+	read -sp "$*"
+}
+
+echo -e "\n---------------------------------------------\n"
+echo "$ git status osgav-root-public"
+echo -e "\n---------------------------------------------\n"
+
+cd ../osgav-root-public
+git status
+
+echo -e "\n---------------------------------------------\n"
+echo "Hit [Enter] to continue with:"
+echo "$ git add --all"
+echo "$ git commit -am \"$1\""
+echo "$ git push origin master"
+echo ""
+pause "Are you sure?"
+echo -e "\n\n---------------------------------------------\n"
+
+git add --all
+git commit -am "$1"
+git push origin master
+
+echo -e "\n---------------------------------------------\n"
+echo "updated published! https://osgav.run"
+echo -e "\n---------------------------------------------\n"
