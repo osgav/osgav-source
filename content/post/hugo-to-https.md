@@ -44,6 +44,7 @@ I still have plenty to learn about Hugo so I will no doubt revisit these in futu
 
 GitHub has a lot of relevant help pages for setting up a GitHub Pages site and configuring a custom domain. I read through many of them, which I've listed below - if you're thinking about setting up GitHub Pages with a custom domain and powering it with Hugo, hopefully some of the hints I've mentioned will be useful alongside the GitHub documentation and other material you read... 
 
+https://gohugo.io/tutorials/github-pages-blog/<br />
 https://help.github.com/articles/quick-start-setting-up-a-custom-domain/<br />
 https://help.github.com/articles/setting-up-your-pages-site-repository/<br />
 https://help.github.com/articles/setting-up-an-apex-domain-and-www-subdomain/<br />

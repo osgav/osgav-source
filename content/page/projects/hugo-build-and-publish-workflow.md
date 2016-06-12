@@ -142,7 +142,18 @@ $ ./hugo/02-serve # to preview locally if necessary (unlikey for typo)
 $ ./hugo/03-publish-stage
 $ ./hugo/04-publish-prod "update typo in recent post"
 ```
+##### what's in the scripts now?
 
+```
+$ tree hugo
+hugo
+├── 01-serve-withdrafts
+├── 02-serve
+├── 03-publish-stage
+└── 04-publish-prod
+```
+
+**`./hugo/03-publish-stage`**<br />
 So where did the `build-public` script go? It's purpose, described above, is in fact the first step towards publishing. You can test all of the site completely locally with `hugo server` without having to build the `public` directory. As such it made sense to include its commands in a more complete script: `03-publish-stage`
 
 ```
@@ -165,7 +176,6 @@ echo -e "copying hugo site public --> osgav-root-public\n"
 rm -rf ../osgav-root-public/*
 cp -r public/* ../osgav-root-public/
 
-
 echo -e "\n--------------------------------------------------\n"
 echo -e "$ git status osgav-root-public\n"
 
@@ -175,9 +185,42 @@ git status
 echo -e "\n--------------------------------------------------\n"
 ```
 
+**`./hugo/04-publish-prod "commit message!"`**<br />
+The `04-publish-prod` script is the only one that takes an argument - the commit message to be used for the `git commit` command. It also shows you the same `git status` output as `03-publish-stage` so you have another chance to sanity check what you're pushing before you publish.
 
- 
+```
+#!/bin/bash
 
+function pause(){
+        read -sp "$*"
+}
+
+echo -e "\n---------------------------------------------\n"
+echo "$ git status osgav-root-public"
+echo -e "\n---------------------------------------------\n"
+
+cd ../osgav-root-public
+git status
+
+echo -e "\n---------------------------------------------\n"
+echo "Hit [Enter] to continue with:"
+echo "$ git add --all"
+echo "$ git commit -am \"$1\""
+echo "$ git push origin master"
+echo ""
+pause "Are you sure?"
+echo -e "\n\n---------------------------------------------\n"
+
+git add --all
+git commit -am "$1"
+git push origin master
+
+echo -e "\n---------------------------------------------\n"
+echo "updated published! https://osgav.run"
+echo -e "\n---------------------------------------------\n"
+```
+
+As you can see I've also numbered the scripts so it is obvious which order they should be getting used in. I still have some steps to add here - don't want `osgav-source` to get out of sync. Currently I've been catching it up manually meaning more than 1 commit to the site could be reverted if I checkout the previous version of the source. Not so great! 
 
 
 ---

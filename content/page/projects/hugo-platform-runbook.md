@@ -1,12 +1,18 @@
 +++
 author = "osgav"
-date = "2016-06-12T16:43:37Z"
-draft = true
+date = "2016-06-12T21:33:09Z"
+draft = false
 share = true
 slug = "hugo-platform-runbook"
 title = "Hugo Platform Runbook"
 
 +++
+
+[< back to projects](/page/projects)<br />
+**`created: 12/06/2016`**
+
+---
+
 This is my runbook for operating my blog, based on the scripts I wrote to help with hugo building and publishing, you can read about these here:
 
 [Hugo Build and Publish Workflow](/page/projects/hugo-build-and-publish-workflow)<br />
@@ -60,7 +66,9 @@ $ ./hugo/04-publish-prod "posting next new post!"
 > unpublish content --><br />
 
 ```
-$ ...
+> same as publishing content
+> but set draft = true in post/page front matter
+> then publish again
 ```
 
 > update existing content (typo, update image) --><br />
