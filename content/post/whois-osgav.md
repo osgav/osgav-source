@@ -8,7 +8,15 @@ share = false
 
 +++
 
-As a Global Availability & Performance Engineer, or more generally a Systems Engineer, I find myself using a multitude of web portals, tools and API integrations to monitor, analyze and optimize the health of a high traffic global travel search engine. 
+### osgav.run
+
+`https://osgav.run/` is my personal blog - a place for me to ramble, and write about projects I'm working on. Historically I've not been an avid blogger, but this changes now! Starting with a shiny new lightweight blogging framework and polished [writing and publishing workflow...](/page/projects/hugo-build-and-publish-workflow)
+
+So who am I? And what do I do?
+
+### gavin mcgough 
+
+As a Global Availability & Performance Engineer, or more generally a Systems Engineer, I find myself using a multitude of web portals, tools and API integrations to monitor, analyze and optimize the health of a high traffic global travel search engine: Skyscanner
 
 This engine is comprised of various website, API and backend systems. There are different systems for monitoring the operation (CDN & GLB), availability, performance (RUM & APM), OS metrics and business KPIs across all of these. My team are the administrators for the availability and performance systems, and we work on creating Global Health views across all of these systems - also integrating with alerting solutions - to give the developers building and running them a better idea of how their products are performing. 
 
