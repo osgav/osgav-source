@@ -15,8 +15,14 @@ title = "$ cd projects"
 
 Project pages for content outside of or accompanying blog posts
 
+##### rundeck
+
+[Rundeck CloudFormation](/page/projects/rundeck-cloudformation)
+
+
 ##### this blog
 
 [Hugo Platform Runbook](/page/projects/hugo-platform-runbook)<br />
 [Hugo Build and Publish Workflow](/page/projects/hugo-build-and-publish-workflow)<br />
-[Hugo Markdown Cheatsheet](/page/projects/hugo-markdown-cheatsheet)
+[Hugo Markdown Cheatsheet](/page/projects/hugo-markdown-cheatsheet)<br />
+[blogpost] [hugo --> https://osgav.run](/post/hugo-to-https)<br />

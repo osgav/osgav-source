@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Hit [Enter] to use the same commit message, or edit it first:"
+read -e -p "$ git commit -m  " -i "$1" NAME
+
+echo $NAME
+
+

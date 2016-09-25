@@ -10,11 +10,13 @@ share = false
 
 ### osgav.run
 
-`https://osgav.run/` is my personal blog - a place for me to ramble, and write about projects I'm working on. Historically I've not been an avid blogger, but this changes now! Starting with a shiny new lightweight blogging framework and polished [writing and publishing workflow...](/page/projects/hugo-build-and-publish-workflow)
+`https://osgav.run/` is my personal blog - a place for me to ramble and write about projects I'm working on. Historically I've not been an avid blogger, but this changes now! Starting with a shiny new lightweight blogging framework and polished [writing and publishing workflow...](/page/projects/hugo-build-and-publish-workflow)
 
 So who am I? And what do I do?
 
 ### gavin mcgough 
+
+I've been interested in computers and the internet for a little over a decade, began "studying" them about 8 years ago and in the last few years started a career in Operations...
 
 As a Global Availability & Performance Engineer, or more generally a Systems Engineer, I find myself using a multitude of web portals, tools and API integrations to monitor, analyze and optimize the health of a high traffic global travel search engine: Skyscanner
 

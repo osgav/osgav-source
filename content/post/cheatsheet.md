@@ -8,6 +8,8 @@ title = "cheatsheet"
 
 +++
 
+https://raw.githubusercontent.com/osgav/osgav-source/master/content/post/cheatsheet.md
+
 <https://osgav.run>
 [text link](https://osgav.run)
 [text link with hover text](https://osgav.run "hoverboard")

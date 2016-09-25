@@ -2,6 +2,6 @@
 
 hugo server --theme=casper \
 --port=1313 \
---bind=192.168.56.2 \
---baseURL="http://192.168.56.2:1313/"
+--bind=192.168.56.12 \
+--baseURL="http://192.168.56.12:1313/"
 

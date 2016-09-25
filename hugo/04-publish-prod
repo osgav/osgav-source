@@ -25,5 +25,15 @@ git commit -am "$1"
 git push origin master
 
 echo -e "\n---------------------------------------------\n"
-echo "updated published! https://osgav.run"
+echo "updated published! --> https://osgav.run"
 echo -e "\n---------------------------------------------\n"
+
+echo -e "\n---------------------------------------------\n"
+echo "$ git status osgav-source"
+echo -e "\n---------------------------------------------\n"
+
+#cd ../osgav-source
+#git status
+
+echo -e "\n---------------------------------------------\n"
+
